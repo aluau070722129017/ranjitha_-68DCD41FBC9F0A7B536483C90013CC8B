@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+# set the player's name
+def name_player(player_instance):
+    name = input("What is your name? ")
+    player_instance.name = name
+
+# define a player class with no attributes
+class player:
+    pass
+
+# create two instances of player
+player_1 = player()
+player_2 = player()
+
+# set each player's name
+name_player(player_1)
+name_player(player_2)
+
+# display each player's name
+print("Player 1's name:", player_1.name)
+print("Player 2's name:", player_2.name)
