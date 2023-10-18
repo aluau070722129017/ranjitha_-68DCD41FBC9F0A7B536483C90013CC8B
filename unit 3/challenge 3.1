@@ -1,19 +1,15 @@
-import re
+def linear_search_product(product_list, target_product):
+  indices = []
+  for i, product in enumerate(product_list):
+      if product == target_product:
+          indices.append(i)
+  return indices
 
-# Sample input
-arr = [10, 20, 80, 30, 60, 50, 110, 100, 130, 170]
-x = 110
-
-# Convert the array to a string
-arr_str = ','.join(str(i) for i in arr)
-
-# Use regular expression to search for the element in the string
-match = re.search(r'\b{}\b'.format(x), arr_str)
-
-# Output
-if match:
-  # Calculate the index by counting the number of commas before the match
-  result = arr_str[:match.start()].count(',')
-  print(f"Element {x} is present at index {result}")
+# Example usage:
+products = ["apple", "banana", "apple", "orange", "apple"]
+target = "apple"
+result = linear_search_product(products, target)
+if result:
+  print(f"The product '{target}' was found at indices: {result}")
 else:
-  print(f"Element {x} is not present in the array")
+  print(f"The product '{target}' was not found in the list.")
